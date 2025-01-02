@@ -6,6 +6,9 @@ export default {
       fontFamily: {
         body: ["Roboto", "serif"],
       },
+      colors: {
+        red: "#FF5252",
+      },
     },
   },
   plugins: [],
