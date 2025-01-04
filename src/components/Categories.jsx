@@ -1,6 +1,6 @@
-import { RiMenu2Fill } from "react-icons/ri";
 import { Link } from "react-router-dom";
 import Button from "@mui/material/Button";
+import CategorySidebar from "./CategorySidebar";
 
 function Categories() {
   const categories = [
@@ -17,18 +17,7 @@ function Categories() {
   return (
     <div className="hidden md:flex items-center justify-between py-1 px-5 border-b-2 border-gray-100">
       <div className="2xl:hidden">
-        <Button
-          sx={{
-            color: "#000", // Custom text color
-            "&:hover": {
-              color: "#fff", // Hover text color
-              backgroundColor: "#FF5252", // Hover color
-            },
-          }}
-          variant="text"
-        >
-          <RiMenu2Fill /> Shop by Category
-        </Button>
+        <CategorySidebar />
       </div>
 
       <div className="categories hidden 2xl:flex">
