@@ -4,7 +4,7 @@ import { TreeItem } from "@mui/x-tree-view/TreeItem";
 
 export default function BasicSimpleTreeView() {
   return (
-    <Box sx={{ minHeight: 352, minWidth: 250 }}>
+    <Box sx={{ minWidth: 250 }}>
       <SimpleTreeView>
         <TreeItem itemId="grid-community" label="Home" />
         <TreeItem itemId="grid" label="Fashion">

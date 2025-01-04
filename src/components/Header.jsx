@@ -11,6 +11,7 @@ import Tooltip from "@mui/material/Tooltip";
 import HeaderTopStrip from "./HeaderTopStrip";
 import ProfileMenu from "./ProfileMenu";
 import Menu from "./Menu";
+import Categories from "./Categories";
 
 const StyledBadge = styled(Badge)(({ theme }) => ({
   "& .MuiBadge-badge": {
@@ -115,6 +116,7 @@ function Header() {
         </div>
       </div>
       {/* ===================== Navigation Categories ================================ */}
+      <Categories />
     </div>
   );
 }

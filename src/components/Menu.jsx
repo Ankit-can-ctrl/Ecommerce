@@ -25,6 +25,14 @@ export default function Menu() {
         <h1 className="  text-lg font-semibold px-3 py-2">Menu</h1>
       </div>
       <TreeSidebar />
+      <div className="m-3 border-t-2 border-gray-100">
+        <p className="py-3 border-b-2 border-gray-100">
+          Get up to 50% off new season styles, limited time only
+        </p>
+        <p className="py-3 border-b-2 border-gray-100">
+          🚀 Free International Delivery
+        </p>
+      </div>
     </Box>
   );
 
