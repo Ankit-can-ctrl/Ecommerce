@@ -10,7 +10,7 @@ import { GoGitCompare } from "react-icons/go";
 import Tooltip from "@mui/material/Tooltip";
 import HeaderTopStrip from "./HeaderTopStrip";
 import ProfileMenu from "./ProfileMenu";
-import MenuSidebar from "./MenuSidebar";
+import Menu from "./Menu";
 
 const StyledBadge = styled(Badge)(({ theme }) => ({
   "& .MuiBadge-badge": {
@@ -29,7 +29,7 @@ function Header() {
       <div className="navbar border-b-[2px] border-gray-100">
         <div className=" top_big_screen flex justify-between items-center gap-8 md:gap-0 px-3 md:px-5 m-auto py-5 ">
           <div className="logo flex items-center gap-2 ">
-            <MenuSidebar />
+            <Menu />
             <Link to="/">
               <img className=" h-[30.23px] md:h-auto" src={logo} alt="Logo" />
             </Link>
