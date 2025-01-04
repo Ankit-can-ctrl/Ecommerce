@@ -13,7 +13,7 @@ function SearchBar() {
   return (
     <div className="flex gap-5 items-center justify-center">
       <input
-        className="bg-gray-100 rounded-sm h-[42px] md:w-[300px] xl:w-[600px] outline-none p-2 text-gray-500"
+        className="bg-gray-100 w-full rounded-sm h-[42px] xl:w-[600px] outline-none p-2 text-gray-500"
         type="text"
       />
       <ThemeProvider theme={theme}>

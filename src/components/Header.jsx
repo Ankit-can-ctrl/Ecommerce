@@ -8,6 +8,9 @@ import { IoCartOutline } from "react-icons/io5";
 import { IoMdHeartEmpty } from "react-icons/io";
 import { GoGitCompare } from "react-icons/go";
 import Tooltip from "@mui/material/Tooltip";
+import HeaderTopStrip from "./HeaderTopStrip";
+import ProfileMenu from "./ProfileMenu";
+import MenuSidebar from "./MenuSidebar";
 
 const StyledBadge = styled(Badge)(({ theme }) => ({
   "& .MuiBadge-badge": {
@@ -21,77 +24,97 @@ const StyledBadge = styled(Badge)(({ theme }) => ({
 function Header() {
   return (
     <div className="main_header_container">
-      <div className="top_strip px-[10%] m-auto flex justify-between items-center text-gray-500 h-10 text-sm border-b-[2px] border-gray-100">
-        <p className="hidden md:flex hover:text-red">
-          Get up to 50% off new season styles, limited time only
-        </p>
-        <div className="top_strip_links ml-auto">
-          <ul className=" flex gap-5">
-            <li className=" list-none">
-              <Link to="#">Help Center</Link>
-            </li>
-            <div className="w-[1px] border-r-2 border-gray-300 rounded-lg" />
-            <li className=" list-none">
-              <Link to="#">Order Tracking</Link>
-            </li>
-          </ul>
-        </div>
-      </div>
+      <HeaderTopStrip />
       {/* ===================== Navigation========================= */}
-      <div className="navbar flex justify-between items-center px-5 m-auto py-5 border-b-[2px] border-gray-100">
-        <div className="logo">
-          <Link to="/">
-            <img src={logo} alt="Logo" />
-          </Link>
+      <div className="navbar border-b-[2px] border-gray-100">
+        <div className=" top_big_screen flex justify-between items-center gap-8 md:gap-0 px-3 md:px-5 m-auto py-5 ">
+          <div className="logo flex items-center gap-2 ">
+            <MenuSidebar />
+            <Link to="/">
+              <img className=" h-[30.23px] md:h-auto" src={logo} alt="Logo" />
+            </Link>
+          </div>
+          <div className="Searchbar hidden xl:flex">
+            <SearchBar />
+          </div>
+          <div className="right_nav_links flex gap-5 items-center justify-center">
+            <div className="Auth_links text-md hidden 2xl:flex">
+              <Link className=" hover:text-red" to="/login">
+                Login{" "}
+              </Link>
+              <span>/</span>
+              <Link className=" hover:text-red" to="/register">
+                {" "}
+                Register
+              </Link>
+            </div>
+            <div className=" hidden 2xl:flex w-[2px] h-[20px] border-r-2 border-gray-200" />
+            <div className="Shopping_icons">
+              <ul className="flex md:gap-5 items-center justify-center">
+                <li className="2xl:hidden">
+                  <ProfileMenu />
+                </li>
+                <li>
+                  <Tooltip title="Compare" placement="bottom">
+                    <IconButton aria-label="compare">
+                      <StyledBadge
+                        badgeContent={1}
+                        sx={{
+                          "& .MuiBadge-badge": {
+                            backgroundColor: "#FF5252",
+                            color: "white",
+                          },
+                        }}
+                      >
+                        <GoGitCompare className="w-[24px] md:w-[32px]" />
+                      </StyledBadge>
+                    </IconButton>
+                  </Tooltip>
+                </li>
+                <li className=" hidden lg:flex">
+                  <Tooltip title="Wishlist" placement="bottom">
+                    <IconButton aria-label="wishlist">
+                      <StyledBadge
+                        sx={{
+                          "& .MuiBadge-badge": {
+                            backgroundColor: "#FF5252",
+                            color: "white",
+                          },
+                        }}
+                        badgeContent={2}
+                      >
+                        <IoMdHeartEmpty size={30} />
+                      </StyledBadge>
+                    </IconButton>
+                  </Tooltip>
+                </li>
+
+                <li>
+                  <Tooltip title="Cart" placement="bottom">
+                    <IconButton aria-label="cart">
+                      <StyledBadge
+                        badgeContent={3}
+                        sx={{
+                          "& .MuiBadge-badge": {
+                            backgroundColor: "#FF5252",
+                            color: "white",
+                          },
+                        }}
+                      >
+                        <IoCartOutline size={30} />
+                      </StyledBadge>
+                    </IconButton>
+                  </Tooltip>
+                </li>
+              </ul>
+            </div>
+          </div>
         </div>
-        <div className="Searchbar">
+        <div className=" bottom_sidebar_small_screen xl:hidden w-full px-5 pb-2">
           <SearchBar />
         </div>
-        <div className="right_nav_links flex gap-5 items-center justify-center">
-          <div className="Auth_links text-md">
-            <Link className=" hover:text-red" to="/login">
-              Login{" "}
-            </Link>
-            <span>/</span>
-            <Link className=" hover:text-red" to="/register">
-              {" "}
-              Register
-            </Link>
-          </div>
-          <div className=" w-[2px] h-[20px] border-r-2 border-gray-200" />
-          <div className="Shopping_icons">
-            <ul className="flex gap-5 items-center justify-center">
-              <li>
-                <Tooltip title="Compare" placement="bottom">
-                  <IconButton aria-label="compare">
-                    <StyledBadge badgeContent={1} color="secondary">
-                      <GoGitCompare size={30} />
-                    </StyledBadge>
-                  </IconButton>
-                </Tooltip>
-              </li>
-              <li>
-                <Tooltip title="Wishlist" placement="bottom">
-                  <IconButton aria-label="wishlist">
-                    <StyledBadge badgeContent={2} color="secondary">
-                      <IoMdHeartEmpty size={30} />
-                    </StyledBadge>
-                  </IconButton>
-                </Tooltip>
-              </li>
-              <li>
-                <Tooltip title="Cart" placement="bottom">
-                  <IconButton aria-label="cart">
-                    <StyledBadge badgeContent={3} color="secondary">
-                      <IoCartOutline size={30} />
-                    </StyledBadge>
-                  </IconButton>
-                </Tooltip>
-              </li>
-            </ul>
-          </div>
-        </div>
       </div>
+      {/* ===================== Navigation Categories ================================ */}
     </div>
   );
 }
