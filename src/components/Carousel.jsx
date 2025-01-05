@@ -24,37 +24,39 @@ export default function Carousel() {
     },
     {
       src: "https://cmsimages.shoppersstop.com/main_banner_web_levis_puma_and_more_152c27a76b/main_banner_web_levis_puma_and_more_152c27a76b.png",
-      alt: "Image 3",
+      alt: "Image 4",
     },
   ];
   return (
     <>
       <style>
         {`
-        .swiper:hover .swiper-button-next,
-        .swiper:hover .swiper-button-prev {
-          display: flex !important;
-            }
-            
-          .swiper-button-next,
-          .swiper-button-prev {
+          
+
+          .swiper .swiper-button-next,
+          .swiper .swiper-button-prev {
           display: none !important;
             color: white !important;
             height: 30px !important;
             width: 30px !important;
             background-color: #FF5252;
             overflow: hidden;
+            
             padding: 10px !important;
             border-radius: 10%;
             box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1);
           }
 
+        .swiper:hover .swiper-button-next,
+        .swiper:hover .swiper-button-prev {
+          display: flex !important;
+         
+            }
+
           .swiper-button-next:after,
           .swiper-button-prev:after {
                 font-size: 15px !important; /* Add this line to control arrow size */
             }
-
-          
 
           .swiper-pagination-bullet {
             width: 10px !important;
@@ -84,8 +86,12 @@ export default function Carousel() {
         className="mySwiper"
       >
         {images?.map((image) => (
-          <SwiperSlide className=" rounded-lg" key={image.alt}>
-            <img className=" " src={image.src} alt={image.alt} />
+          <SwiperSlide className="rounded-lg" key={image.alt}>
+            <img
+              className="min-h-[200px] object-cover object-right lg:min-h-[400px]"
+              src={image.src}
+              alt={image.alt}
+            />
           </SwiperSlide>
         ))}
       </Swiper>

@@ -1,9 +1,10 @@
 import Button from "@mui/material/Button";
-function ButtonMain({ props }) {
+function ButtonMain({ text, size = 150 }) {
   return (
     <Button
       sx={{
         backgroundColor: "#FF5252",
+        width: `${size}px`,
         "&:hover": {
           color: "#fff",
           backgroundColor: "#000",
@@ -11,7 +12,7 @@ function ButtonMain({ props }) {
       }}
       variant="contained"
     >
-      {props}
+      {text}
     </Button>
   );
 }
