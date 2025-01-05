@@ -1,18 +1,23 @@
 import Header from "../components/Header";
 import Carousel from "../components/Carousel";
-import TopProducts from "../components/Homepage/TopProducts";
-import { AltRoute } from "@mui/icons-material";
+
 import ProductOffer from "../components/ProductOffer";
 
 function Home() {
   const topProduct = [
     {
-      src: "https://cmsimages.shoppersstop.com/W_web_149fdc0907/W_web_149fdc0907.png",
-      alt: "Sport shoes",
+      name: "Samsung camera",
+      price: "129",
+      src: "https://demos.codezeel.com/prestashop/PRS21/PRS210502/img/cms/sub-banner-1.jpg",
+      alt: "cam",
+      side: "start",
     },
     {
-      src: "https://cmsimages.shoppersstop.com/W_web_149fdc0907/W_web_149fdc0907.png",
-      alt: "Kids winter wear",
+      name: "Chair",
+      price: "200",
+      src: "https://demos.codezeel.com/prestashop/PRS21/PRS210502/img/cms/sub-banner-2.jpg",
+      alt: "Chair",
+      side: "end",
     },
   ];
 
@@ -26,18 +31,17 @@ function Home() {
           <div className="carousel rounded-lg overflow-hidden">
             <Carousel />
           </div>
-          <div className="product_offer">
-            <ProductOffer />
-          </div>
-          {/* <div className="top_two_products rounded-lg flex flex-row lg:flex-col gap-5 overflow-hidden">
+          <div className="product_offer flex flex-col md:grid md:grid-cols-2 2xl:flex 2xl:flex-col gap-2">
             {topProduct?.map((product) => (
-              <TopProducts
+              <ProductOffer
                 key={product.alt}
                 src={product.src}
-                alt={product.alt}
+                side={product.side}
+                name={product.name}
+                price={product.price}
               />
             ))}
-          </div> */}
+          </div>
         </div>
       </div>
     </div>
