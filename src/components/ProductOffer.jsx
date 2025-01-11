@@ -2,7 +2,7 @@ import ButtonMain from "./ButtonMain";
 function ProductOffer({ src, side, name, price }) {
   return (
     <div
-      className={`min-h-[200px] cursor-pointer min-w-[300px] flex flex-col items-${side} justify-end gap-2 p-5 rounded-lg bg-cover bg-center`}
+      className={`min-h-[200px] cursor-pointer min-w-[300px] w-full flex flex-col items-${side} justify-end gap-2 p-5 rounded-lg bg-cover bg-center`}
       style={{
         backgroundImage: `url(${src})`,
       }}
