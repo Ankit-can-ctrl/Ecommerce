@@ -4,7 +4,7 @@ function ButtonMain({ text, size = 150, bgColor = "#FF5252" }) {
     <Button
       sx={{
         backgroundColor: bgColor,
-        width: `${size}px`,
+        width: `120px`,
         "&:hover": {
           color: "#fff",
           backgroundColor: "#000",

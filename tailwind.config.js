@@ -8,6 +8,7 @@ export default {
       },
       colors: {
         red: "#FF5252",
+        bgcolor: "#F5F0F0",
       },
     },
   },

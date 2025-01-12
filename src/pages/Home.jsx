@@ -11,6 +11,7 @@ import ProductSwiper from "../components/ProductSwiper";
 // import ButtonMain from "../components/ButtonMain";
 import CategoryButtons from "../components/CategoryButtons";
 import Label from "../components/Label";
+import Timer from "../components/Timer";
 
 // import { categories } from "./data";
 
@@ -55,6 +56,22 @@ function Home() {
       side: "end",
     },
   ];
+  const twoAds = [
+    {
+      name: "Santa lucia three seater sofa",
+      price: "129",
+      src: "https://demos.codezeel.com/prestashop/PRS21/PRS210502/img/cms/cms-banner-4.jpg",
+      alt: "sofa",
+      side: "start",
+    },
+    {
+      name: "women in red crew neck T-shirt",
+      price: "200",
+      src: "https://demos.codezeel.com/prestashop/PRS21/PRS210502/img/cms/cms-banner-5.jpg",
+      alt: "T-shirt",
+      side: "start",
+    },
+  ];
 
   return (
     <div className=" font-body">
@@ -66,7 +83,7 @@ function Home() {
           <div className="carousel rounded-lg overflow-hidden">
             <Carousel />
           </div>
-          <div className="product_offer flex flex-col md:grid md:grid-cols-2 2xl:flex 2xl:flex-col gap-2">
+          <div className="product_offer flex flex-col md:grid md:grid-cols-2 2xl:flex 2xl:flex-col gap-2 items-center">
             {topProduct?.map((product) => (
               <ProductOffer
                 key={product.alt}
@@ -86,15 +103,24 @@ function Home() {
         <FreeShippingBanner />
         <Ads ads={ads} />
       </div>
-      <div className="products_container flex flex-col gap-5 bg-gray-200 rounded-lg overflow-hidden p-5">
+      <div className="products_container flex flex-col gap-5  bg-bgcolor rounded-lg overflow-hidden py-5">
         <CategoryButtons />
         <ProductSwiper />
       </div>
       <div className="ads_container p-5">
         <WatchBanner />
       </div>
-      <div className="latest_products p-5 bg-gray-200 flex flex-col gap-5">
+
+      <div className=" md:px-10 py-5 ">
         <Label label={"Latest Products"} />
+        <ProductSwiper />
+        <Ads ads={twoAds} />
+        <Label label={"Featured Products"} />
+        <ProductSwiper />
+        <div className="deals_of_day py-5 flex flex-col  lg:flex-row items-center  gap-5">
+          <Label label={"Deals of the day"} />
+          <Timer />
+        </div>
         <ProductSwiper />
       </div>
     </div>

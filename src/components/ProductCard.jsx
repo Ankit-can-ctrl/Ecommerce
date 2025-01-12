@@ -21,11 +21,13 @@ function ProductCard() {
           Menu Bottle Salt and Pepper Sprinkler
         </h2>
         <div className="review_stars">⭐⭐⭐⭐⭐</div>
-        <div className="price flex gap-2">
+        <div className="price flex items-center justify-start gap-2">
           <span className="discounted_price line-through text-gray-500">
             $49.99
           </span>
-          <span>$39.99</span>
+          <button className="text-white bg-red px-2 rounded-md py-1 font-semibold">
+            $39.99
+          </button>
         </div>
       </div>
     </Link>

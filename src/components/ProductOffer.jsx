@@ -7,10 +7,8 @@ function ProductOffer({ src, side, name, price }) {
         backgroundImage: `url(${src})`,
       }}
     >
-      <div
-        className={`flex flex-col w-[80%] items-${side} justify-center gap-2`}
-      >
-        <h1 className=" text-2xl  font-semibold truncate items-end w-[70%] text-end">
+      <div className={`flex flex-col w-[50%] items-${side} text-center gap-2`}>
+        <h1 className=" text-2xl font-semibold capitalize truncate overflow-hidden whitespace-nowrap w-full   ">
           {name}
         </h1>
         <p className=" text-2xl text-red font-semibold">${price}</p>
