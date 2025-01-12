@@ -4,7 +4,7 @@ function Ads({ ads }) {
   return (
     <div
       className=" w-full flex flex-col lg:flex-row
-     gap-5 items-center py-5"
+     gap-10 items-center py-5"
     >
       {ads.map((ad) => (
         <ProductOffer

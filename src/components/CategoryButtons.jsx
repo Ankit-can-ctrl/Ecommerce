@@ -2,6 +2,7 @@ import React from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, FreeMode } from "swiper/modules";
 import { ChevronLeft, ChevronRight } from "lucide-react";
+import ButtonMain from "./ButtonMain";
 
 // Note: In your actual project, you'll need to import these Swiper styles:
 // import 'swiper/css';
@@ -29,7 +30,7 @@ const CategorySwiper = () => {
   const navigationNextRef = React.useRef(null);
 
   return (
-    <div className="relative w-full  mx-auto">
+    <div className="relative w-full mx-auto  px-14">
       <Swiper
         modules={[Navigation, FreeMode]}
         spaceBetween={16}
@@ -49,33 +50,28 @@ const CategorySwiper = () => {
           swiper.params.navigation.prevEl = navigationPrevRef.current;
           swiper.params.navigation.nextEl = navigationNextRef.current;
         }}
-        className="py-4"
+        className=""
       >
         {categories.map((category) => (
           <SwiperSlide
             key={category.id}
-            className="!w-[150px] !h-[150px]  select-none"
+            className="!w-[150px] !h-[50px] select-none"
           >
-            <div className="flex flex-col items-center justify-center p-4 bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow cursor-grab active:cursor-grabbing h-full">
-              <span className="text-2xl mb-2">{category.icon}</span>
-              <span className="text-sm font-medium text-gray-700">
-                {category.name}
-              </span>
-            </div>
+            <ButtonMain text={"Furniture"} />
           </SwiperSlide>
         ))}
       </Swiper>
 
       <button
         ref={navigationPrevRef}
-        className="absolute left-0 top-1/2 -translate-y-1/2 z-10 bg-red text-white shadow-lg rounded-full p-2 hover:bg-black disabled:opacity-50 disabled:cursor-not-allowed"
+        className="absolute left-0 top-1/2 -translate-y-[25px] z-10 bg-red text-white shadow-lg rounded-full p-2 hover:bg-black disabled:opacity-50 disabled:cursor-not-allowed"
       >
-        <ChevronLeft className="w-6 h-6" />
+        <ChevronLeft className="w-6 " />
       </button>
 
       <button
         ref={navigationNextRef}
-        className="absolute right-0 top-1/2 -translate-y-1/2 z-10 bg-red text-white shadow-lg rounded-full p-2 hover:bg-black disabled:opacity-50 disabled:cursor-not-allowed"
+        className="absolute right-0 top-1/2 -translate-y-[25px] z-10 bg-red text-white shadow-lg rounded-full p-2 hover:bg-black disabled:opacity-50 disabled:cursor-not-allowed"
       >
         <ChevronRight className="w-6 h-6" />
       </button>

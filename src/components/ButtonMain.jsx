@@ -1,9 +1,9 @@
 import Button from "@mui/material/Button";
-function ButtonMain({ text, size = 150 }) {
+function ButtonMain({ text, size = 150, bgColor = "#FF5252" }) {
   return (
     <Button
       sx={{
-        backgroundColor: "#FF5252",
+        backgroundColor: bgColor,
         width: `${size}px`,
         "&:hover": {
           color: "#fff",

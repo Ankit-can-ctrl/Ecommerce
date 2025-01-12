@@ -6,6 +6,13 @@ import ProductOffer from "../components/ProductOffer";
 import CategorySwiper from "../components/Homepage/CategorySwiper";
 import FreeShippingBanner from "../components/Homepage/FreeShippingBanner";
 import WatchBanner from "../components/Homepage/WatchBanner";
+// import ProductCard from "../components/ProductCard";
+import ProductSwiper from "../components/ProductSwiper";
+// import ButtonMain from "../components/ButtonMain";
+import CategoryButtons from "../components/CategoryButtons";
+import Label from "../components/Label";
+
+// import { categories } from "./data";
 
 function Home() {
   const topProduct = [
@@ -27,16 +34,16 @@ function Home() {
 
   const ads = [
     {
-      name: "Samsung camera",
+      name: "Samsung",
       price: "129",
-      src: "https://demos.codezeel.com/prestashop/PRS21/PRS210502/img/cms/sub-banner-1.jpg",
+      src: "https://demos.codezeel.com/prestashop/PRS21/PRS210502/img/cms/cms-banner-1.jpg",
       alt: "cam",
-      side: "start",
+      side: "end",
     },
     {
       name: "Chair",
       price: "200",
-      src: "https://demos.codezeel.com/prestashop/PRS21/PRS210502/img/cms/sub-banner-2.jpg",
+      src: "https://demos.codezeel.com/prestashop/PRS21/PRS210502/img/cms/cms-banner-2.jpg",
       alt: "Chair",
       side: "end",
     },
@@ -48,65 +55,6 @@ function Home() {
       side: "end",
     },
   ];
-
-  // const categories = [
-  //   {
-  //     category: "T-shirts",
-  //     src: "https://demos.codezeel.com/prestashop/PRS21/PRS210502/modules/cz_categoryimagelist/views/img/12-cz_categoryimagelist.jpg",
-  //   },
-  //   {
-  //     category: "T-shirts",
-  //     src: "https://demos.codezeel.com/prestashop/PRS21/PRS210502/modules/cz_categoryimagelist/views/img/12-cz_categoryimagelist.jpg",
-  //   },
-  //   {
-  //     category: "T-shirts",
-  //     src: "https://demos.codezeel.com/prestashop/PRS21/PRS210502/modules/cz_categoryimagelist/views/img/12-cz_categoryimagelist.jpg",
-  //   },
-  //   {
-  //     category: "T-shirts",
-  //     src: "https://demos.codezeel.com/prestashop/PRS21/PRS210502/modules/cz_categoryimagelist/views/img/12-cz_categoryimagelist.jpg",
-  //   },
-  //   {
-  //     category: "T-shirts",
-  //     src: "https://demos.codezeel.com/prestashop/PRS21/PRS210502/modules/cz_categoryimagelist/views/img/12-cz_categoryimagelist.jpg",
-  //   },
-  //   {
-  //     category: "T-shirts",
-  //     src: "https://demos.codezeel.com/prestashop/PRS21/PRS210502/modules/cz_categoryimagelist/views/img/12-cz_categoryimagelist.jpg",
-  //   },
-  //   {
-  //     category: "T-shirts",
-  //     src: "https://demos.codezeel.com/prestashop/PRS21/PRS210502/modules/cz_categoryimagelist/views/img/12-cz_categoryimagelist.jpg",
-  //   },
-  //   {
-  //     category: "T-shirts",
-  //     src: "https://demos.codezeel.com/prestashop/PRS21/PRS210502/modules/cz_categoryimagelist/views/img/12-cz_categoryimagelist.jpg",
-  //   },
-  //   {
-  //     category: "T-shirts",
-  //     src: "https://demos.codezeel.com/prestashop/PRS21/PRS210502/modules/cz_categoryimagelist/views/img/12-cz_categoryimagelist.jpg",
-  //   },
-  //   {
-  //     category: "T-shirts",
-  //     src: "https://demos.codezeel.com/prestashop/PRS21/PRS210502/modules/cz_categoryimagelist/views/img/12-cz_categoryimagelist.jpg",
-  //   },
-  //   {
-  //     category: "T-shirts",
-  //     src: "https://demos.codezeel.com/prestashop/PRS21/PRS210502/modules/cz_categoryimagelist/views/img/12-cz_categoryimagelist.jpg",
-  //   },
-  //   {
-  //     category: "T-shirts",
-  //     src: "https://demos.codezeel.com/prestashop/PRS21/PRS210502/modules/cz_categoryimagelist/views/img/12-cz_categoryimagelist.jpg",
-  //   },
-  //   {
-  //     category: "T-shirts",
-  //     src: "https://demos.codezeel.com/prestashop/PRS21/PRS210502/modules/cz_categoryimagelist/views/img/12-cz_categoryimagelist.jpg",
-  //   },
-  //   {
-  //     category: "T-shirts",
-  //     src: "https://demos.codezeel.com/prestashop/PRS21/PRS210502/modules/cz_categoryimagelist/views/img/12-cz_categoryimagelist.jpg",
-  //   },
-  // ];
 
   return (
     <div className=" font-body">
@@ -132,13 +80,22 @@ function Home() {
         </div>
         <div className="Category_carousel pt-10">
           <CategorySwiper />
-          {/* <CategoryCard categories={categories} /> */}
         </div>
       </div>
-      <div className="p-5 md:p-10">
+      <div className="p-5 md:p-10 flex flex-col  gap-10">
         <FreeShippingBanner />
         <Ads ads={ads} />
+      </div>
+      <div className="products_container flex flex-col gap-5 bg-gray-200 rounded-lg overflow-hidden p-5">
+        <CategoryButtons />
+        <ProductSwiper />
+      </div>
+      <div className="ads_container p-5">
         <WatchBanner />
+      </div>
+      <div className="latest_products p-5 bg-gray-200 flex flex-col gap-5">
+        <Label label={"Latest Products"} />
+        <ProductSwiper />
       </div>
     </div>
   );

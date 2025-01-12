@@ -7,8 +7,12 @@ function ProductOffer({ src, side, name, price }) {
         backgroundImage: `url(${src})`,
       }}
     >
-      <div className=" flex flex-col items-start justify-center gap-2">
-        <h1 className=" text-2xl w-[50%] font-semibold">{name}</h1>
+      <div
+        className={`flex flex-col w-[80%] items-${side} justify-center gap-2`}
+      >
+        <h1 className=" text-2xl  font-semibold truncate items-end w-[70%] text-end">
+          {name}
+        </h1>
         <p className=" text-2xl text-red font-semibold">${price}</p>
         <ButtonMain text="Shop Now" size={150} />
       </div>

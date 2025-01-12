@@ -2,7 +2,7 @@ function WatchBanner() {
   return (
     <div className="h-[150px] overflow-hidden rounded-md relative group cursor-pointer">
       <img
-        className="object-cover object-center w-full h-full group-hover:scale-110 transition-all duration-500 ease-in-out"
+        className="object-cover object-center w-full h-full group-hover:scale-110 transition-all duration-700 ease-in-out"
         src="https://images.pexels.com/photos/10488980/pexels-photo-10488980.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
         alt="Watch"
       />
@@ -11,7 +11,7 @@ function WatchBanner() {
           <h1 className="text-4xl md:text-6xl font-semibold hidden md:inline-block">
             Watch
           </h1>
-          <span className=" text-md md:text-xl font-bold shadow-lg flex flex-col items-center">
+          <span className=" text-xl md:text-xl font-bold shadow-lg flex flex-col items-center">
             LIGE Luxury Watch{" "}
             <span className="hidden md:inline-block">
               Fashion Diver Men Watch 30ATM LIGE 10045
