@@ -2,7 +2,7 @@ function WatchBanner() {
   return (
     <div className="h-[150px] overflow-hidden rounded-md relative group cursor-pointer">
       <img
-        className="object-cover object-center w-full h-full group-hover:scale-110 transition-all duration-700 ease-in-out"
+        className="object-cover object-center w-full h-full group-hover:scale-110 transition-all duration-500"
         src="https://images.pexels.com/photos/10488980/pexels-photo-10488980.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
         alt="Watch"
       />

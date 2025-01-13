@@ -1,4 +1,4 @@
-import Swipeable from "../../components/Swipeable";
+import Swipeable from "../Swipeable";
 
 const instaPosts = [
   {
@@ -42,10 +42,11 @@ const instaPosts = [
     src: "https://demos.codezeel.com/prestashop/PRS21/PRS210502/modules/cz_instagramfeeds/views/img/instapic/7.jpg",
   },
 ];
+
 function SocialPosts() {
   return (
-    <div className="social-posts">
-      <Swipeable SubComponent={Post} data={instaPosts} />
+    <div className="md:w-[80%]">
+      <Swipeable SubComponent={Post} data={instaPosts} autoplay={true} />
     </div>
   );
 }
@@ -54,10 +55,10 @@ export default SocialPosts;
 
 function Post({ item }) {
   return (
-    <div className=" rounded-md overflow-hidden">
+    <div className=" rounded-md overflow-hidden mx-5 ">
       {
         <img
-          className=" hover:scale-105 transition duration-300"
+          className=" hover:scale-105 transition duration-300 h-[350px] object-cover"
           src="https://demos.codezeel.com/prestashop/PRS21/PRS210502/modules/cz_instagramfeeds/views/img/instapic/8.jpg"
           alt="Post"
         />

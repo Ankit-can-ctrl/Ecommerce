@@ -25,7 +25,8 @@ import ClientCard from "../components/ClientCard";
 // import { categories } from "./data";
 import BlogCard from "../components/Homepage/BlogCard";
 import SocialPosts from "../components/Homepage/SocialPosts";
-
+import Feature from "../components/Feature";
+import Footer from "../components/Footer";
 function Home() {
   const topProduct = [
     {
@@ -203,6 +204,7 @@ function Home() {
           SubComponent={CompaniesCard}
           buttonColor={"#FF5252"}
           data={brandsLogo}
+          autoplay={true}
         />
         <h1 className="px-5 pt-5 text-3xl md:text-4xl">
           What our clients say about us?
@@ -211,7 +213,14 @@ function Home() {
         <h2 className=" px-5 text-3xl md:text-4xl">From Our Blog</h2>
         <Swipeable SubComponent={BlogCard} data={categories} />
       </div>
-      <SocialPosts />
+      <div className="md:flex items-center justify-center pt-10 bg-bgcolor">
+        <h2 className="px-5 text-3xl  text-center md:text-5xl font-semibold text-gray-500">
+          Follow Us On Instagram
+        </h2>
+        <SocialPosts />
+      </div>
+      <Feature />
+      <Footer />
 
       {/* <Swipeable SubComponent={ClientCard} buttonColor={"#FF5252"} /> */}
     </div>

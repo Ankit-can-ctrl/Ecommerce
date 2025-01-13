@@ -13,7 +13,7 @@ export default function TemporaryDrawer() {
     Fashion: {
       items: [],
     },
-    Jewelry: {
+    Jewelery: {
       items: [
         "Necklace",
         "Earrings",

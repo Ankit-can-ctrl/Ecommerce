@@ -1,6 +1,6 @@
 import React from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Navigation, FreeMode } from "swiper/modules";
+import { Navigation, FreeMode, Autoplay } from "swiper/modules";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 
 const categories = [
@@ -19,16 +19,21 @@ const categories = [
   { id: 13, name: "Travel", icon: "✈️" },
 ];
 
-function Swipeable({ SubComponent, data }) {
+function Swipeable({ SubComponent, data, autoplay = false }) {
   const navigationPrevRef = React.useRef(null);
   const navigationNextRef = React.useRef(null);
   return (
     <>
       <div className="relative w-full bg-bgcolor mx-auto p-5">
         <Swiper
-          modules={[Navigation, FreeMode]}
+          modules={[Navigation, FreeMode, Autoplay]}
           spaceBetween={16}
           slidesPerView="auto"
+          autoplay={{
+            delay: 2500,
+            disableOnInteraction: false,
+            enabled: autoplay,
+          }}
           navigation={{
             prevEl: navigationPrevRef.current,
             nextEl: navigationNextRef.current,
@@ -44,7 +49,6 @@ function Swipeable({ SubComponent, data }) {
             swiper.params.navigation.prevEl = navigationPrevRef.current;
             swiper.params.navigation.nextEl = navigationNextRef.current;
           }}
-          className=""
         >
           {data.map((item, index) => (
             <SwiperSlide
