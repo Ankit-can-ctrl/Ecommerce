@@ -213,7 +213,7 @@ function Home() {
         <h2 className=" px-5 text-3xl md:text-4xl">From Our Blog</h2>
         <Swipeable SubComponent={BlogCard} data={categories} />
       </div>
-      <div className="md:flex items-center justify-center pt-10 bg-bgcolor">
+      <div className="md:flex items-center justify-center pt-10 bg-bgcolor overflow-hidden">
         <h2 className="px-5 text-3xl  text-center md:text-5xl font-semibold text-gray-500">
           Follow Us On Instagram
         </h2>
