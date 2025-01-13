@@ -47,15 +47,15 @@ const Timer = ({ hours = 22 }) => {
       {/* Timer Display */}
       <div className="grid grid-cols-3 gap-2 md:gap-4 text-center">
         <div className="flex flex-col">
-          <div className="md:text-4xl font-bold text-red">{h}</div>
+          <div className="md:text-3xl font-bold text-red">{h}</div>
           <div className="text-sm text-gray-500">Hours</div>
         </div>
         <div className="flex flex-col">
-          <div className="md:text-4xl font-bold text-red">{m}</div>
+          <div className="md:text-3xl font-bold text-red">{m}</div>
           <div className="text-sm text-gray-500">Minutes</div>
         </div>
         <div className="flex flex-col">
-          <div className="md:text-4xl font-bold text-red">{s}</div>
+          <div className="md:text-3xl font-bold text-red">{s}</div>
           <div className="text-sm text-gray-500">Seconds</div>
         </div>
       </div>

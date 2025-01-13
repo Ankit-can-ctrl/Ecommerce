@@ -9,6 +9,8 @@ export default {
       colors: {
         red: "#FF5252",
         bgcolor: "#F5F0F0",
+        lightButton: "#c2bdbd",
+        darkButton: "#FF5252",
       },
     },
   },
