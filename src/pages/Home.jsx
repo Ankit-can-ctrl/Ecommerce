@@ -2,27 +2,16 @@ import Header from "../components/Header";
 import Carousel from "../components/Carousel";
 import Ads from "../components/Homepage/Ads";
 import ProductOffer from "../components/ProductOffer";
-// import CategoryCard from "../components/Homepage/CategoryCard";
-// import CategorySwiper from "../components/Homepage/CategorySwiper";
 import FreeShippingBanner from "../components/Homepage/FreeShippingBanner";
 import WatchBanner from "../components/Homepage/WatchBanner";
-// import ProductCard from "../components/ProductCard";
 import ProductSwiper from "../components/ProductSwiper";
-// import ButtonMain from "../components/ButtonMain";
-// import CategoryButtons from "../components/CategoryButtons";
 import Label from "../components/Label";
 import Timer from "../components/Timer";
-// import Brands from "../components/Brands";
-// import ClientCard from "../components/ClientCard";
-// import BlogsSwiper from "../components/BlogsSwiper";
-// import Testimonial from "../components/Homepage/Testimonial";
 import Swipeable from "../components/Swipeable";
 import CategoryCard from "../components/Homepage/CategoryCard";
-// import ButtonMain from "../components/ButtonMain";
 import CategorybuttonsCard from "../components/Homepage/CategorybuttonsCard";
 import CompaniesCard from "../components/Homepage/CompaniesCard";
 import ClientCard from "../components/ClientCard";
-// import { categories } from "./data";
 import BlogCard from "../components/Homepage/BlogCard";
 import SocialPosts from "../components/Homepage/SocialPosts";
 import Feature from "../components/Feature";
@@ -221,8 +210,6 @@ function Home() {
       </div>
       <Feature />
       <Footer />
-
-      {/* <Swipeable SubComponent={ClientCard} buttonColor={"#FF5252"} /> */}
     </div>
   );
 }
