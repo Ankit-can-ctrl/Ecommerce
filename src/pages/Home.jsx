@@ -19,18 +19,12 @@ import Footer from "../components/Footer";
 function Home() {
   const topProduct = [
     {
-      name: "Samsung camera",
-      price: "129",
-      src: "https://demos.codezeel.com/prestashop/PRS21/PRS210502/img/cms/sub-banner-1.jpg",
+      src: "https://mir-s3-cdn-cf.behance.net/project_modules/fs/b530f7110494491.5feef8228f2b8.png",
       alt: "cam",
-      side: "start",
     },
     {
-      name: "Chair",
-      price: "200",
-      src: "https://demos.codezeel.com/prestashop/PRS21/PRS210502/img/cms/sub-banner-2.jpg",
+      src: "https://mir-s3-cdn-cf.behance.net/project_modules/max_3840/facc48204509849.66aa25531a8b8.png",
       alt: "Chair",
-      side: "end",
     },
   ];
 
@@ -61,59 +55,44 @@ function Home() {
     { id: 12, name: "Travel", icon: "✈️" },
     { id: 13, name: "Travel", icon: "✈️" },
   ];
+
+  // https://mir-cdn.behance.net/v1/rendition/project_modules/2800_opt_1/1c06cd215220503.6766a5bed048b.jpg
   const ads = [
     {
-      name: "Samsung",
-      price: "129",
-      src: "https://demos.codezeel.com/prestashop/PRS21/PRS210502/img/cms/cms-banner-1.jpg",
+      src: "https://mir-s3-cdn-cf.behance.net/project_modules/fs/0f8103214675655.675c151ddbba9.jpg",
       alt: "cam",
-      side: "end",
     },
     {
-      name: "Chair",
-      price: "200",
-      src: "https://demos.codezeel.com/prestashop/PRS21/PRS210502/img/cms/cms-banner-2.jpg",
+      src: "https://mir-s3-cdn-cf.behance.net/project_modules/max_3840/ca3f4c204509849.66aa255319c67.png",
       alt: "Chair",
-      side: "end",
     },
     {
-      name: "Headphone",
-      price: "200",
-      src: "https://demos.codezeel.com/prestashop/PRS21/PRS210502/img/cms/cms-banner-3.jpg",
+      src: "https://mir-s3-cdn-cf.behance.net/project_modules/2800_opt_1/b44a68213211573.67425991b3d57.jpg",
       alt: "Chair",
-      side: "end",
     },
   ];
   const twoAds = [
     {
-      name: "Santa lucia three seater sofa",
-      price: "129",
-      src: "https://demos.codezeel.com/prestashop/PRS21/PRS210502/img/cms/cms-banner-4.jpg",
+      src: "https://mir-s3-cdn-cf.behance.net/project_modules/fs/3b73ff182730865.653292b7057e7.jpg",
       alt: "sofa",
-      side: "start",
     },
     {
-      name: "women in red crew neck T-shirt",
-      price: "200",
-      src: "https://demos.codezeel.com/prestashop/PRS21/PRS210502/img/cms/cms-banner-5.jpg",
+      src: "https://mir-s3-cdn-cf.behance.net/project_modules/2800_opt_1/712869118965343.6093bf04eb5d5.jpg",
       alt: "T-shirt",
-      side: "start",
     },
   ];
   const twoNewAds = [
     {
-      name: "Mobile Shope-Smart Watch T-55",
-      price: "129",
-      src: "https://demos.codezeel.com/prestashop/PRS21/PRS210502/img/cms/cms-banner-6.jpg",
+      src: "https://mir-s3-cdn-cf.behance.net/project_modules/2800_opt_1/7d4e17195124683.660805298a2c7.jpg",
       alt: "sofa",
-      side: "start",
     },
     {
-      name: "Decoration Design Lamp Light",
-      price: "200",
-      src: "https://demos.codezeel.com/prestashop/PRS21/PRS210502/img/cms/cms-banner-7.jpg",
+      src: "https://mir-s3-cdn-cf.behance.net/project_modules/max_3840/d54af8208835139.66f528e4dd065.jpg",
       alt: "T-shirt",
-      side: "start",
+    },
+    {
+      src: "https://mir-s3-cdn-cf.behance.net/project_modules/1400/964902201295863.6671f349c860d.png",
+      alt: "T-shirt",
     },
   ];
   const brandsLogo = [
@@ -132,11 +111,11 @@ function Home() {
         <Header />
       </div>
       <div className="hero_section p-4  bg-[#F5F0F0]">
-        <div className="hero_banner w-full h-full flex flex-col  2xl:flex-row gap-10">
+        <div className="hero_banner w-full h-full flex flex-col  gap-10">
           <div className="carousel rounded-lg overflow-hidden">
             <Carousel />
           </div>
-          <div className="product_offer flex flex-col md:grid md:grid-cols-2 2xl:flex 2xl:flex-col gap-2 items-center">
+          <div className="product_offer w-full flex flex-col md:grid grid-cols-2 gap-3 overflow-hidden pb-10">
             {topProduct?.map((product) => (
               <ProductOffer
                 key={product.alt}
@@ -155,13 +134,12 @@ function Home() {
           buttonColor={"#FF5252"}
           data={categories}
         />
-        {/* <CategorySwiper /> */}
       </div>
       <div className="p-5 md:p-10 flex flex-col  gap-10">
         <FreeShippingBanner />
-        <Ads ads={ads} />
       </div>
-      <div className="products_container flex flex-col gap-5  bg-bgcolor rounded-lg overflow-hidden py-5">
+      <Ads ads={ads} count={3} />
+      <div className="products_container flex flex-col  bg-bgcolor rounded-lg overflow-hidden ">
         <Swipeable
           SubComponent={CategorybuttonsCard}
           data={categoriesButtons}
@@ -173,10 +151,14 @@ function Home() {
         <WatchBanner />
       </div>
 
-      <div className=" md:px-10 py-5 ">
+      <div className=" bg-bgcolor my-5 pt-1">
         <Label label={"Latest Products"} />
         <ProductSwiper />
-        <Ads ads={twoAds} />
+      </div>
+
+      <Ads ads={twoAds} count={2} />
+
+      <div className=" bg-bgcolor mt-5 pt-1">
         <Label label={"Featured Products"} />
         <ProductSwiper />
         <div className="deals_of_day py-5 flex flex-col  lg:flex-row items-center  gap-5">
@@ -185,7 +167,9 @@ function Home() {
         </div>
         <ProductSwiper />
       </div>
-      <Ads ads={twoNewAds} />
+      <div className="my-5">
+        <Ads ads={twoNewAds} />
+      </div>
 
       {/* <Brands /> */}
       <div className="review flex flex-col gap-5 pt-10 bg-bgcolor  text-gray-500 font-semibold">

@@ -26,7 +26,7 @@ const ProductSwiper = () => {
 
   return (
     <>
-      <div className="relative w-full bg-bgcolor mx-auto p-5">
+      <div className="relative w-full bg-bgcolor mx-auto  px-5 pb-5">
         <Swiper
           modules={[Navigation, FreeMode]}
           spaceBetween={16}

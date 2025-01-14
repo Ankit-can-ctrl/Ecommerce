@@ -1,76 +1,40 @@
-// Import Swiper React components
 import { Swiper, SwiperSlide } from "swiper/react";
-// import Button from "@mui/material/Button";
-// Import Swiper styles
 import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
-
+import { ChevronLeft, ChevronRight } from "lucide-react";
+import React from "react";
 import { Autoplay, Pagination, Navigation } from "swiper/modules";
 
 export default function Carousel() {
+  const navigationPrevRef = React.useRef(null);
+  const navigationNextRef = React.useRef(null);
+
   const images = [
     {
-      src: "https://cmsimages.shoppersstop.com/main_banner_web_Skechers_Adidas_and_more_4355c5edda/main_banner_web_Skechers_Adidas_and_more_4355c5edda.png",
+      src: "https://mir-s3-cdn-cf.behance.net/project_modules/fs/91503d110494491.5feef8228f77b.png",
       alt: "Image 1",
     },
     {
-      src: "https://cmsimages.shoppersstop.com/eoss_main_banner_web_56324b74ba/eoss_main_banner_web_56324b74ba.png",
+      src: "https://mir-s3-cdn-cf.behance.net/project_modules/fs/cd94a9158700441.639071f8ba1e8.png",
       alt: "Image 2",
     },
     {
-      src: "https://cmsimages.shoppersstop.com/main_banner_web_Forever_New_Veromoda_and_more_a917b6c9e2/main_banner_web_Forever_New_Veromoda_and_more_a917b6c9e2.png",
+      src: "https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/179d9c109464809.604af4c0b79f9.png",
       alt: "Image 3",
     },
     {
-      src: "https://cmsimages.shoppersstop.com/main_banner_web_levis_puma_and_more_152c27a76b/main_banner_web_levis_puma_and_more_152c27a76b.png",
+      src: "https://mir-s3-cdn-cf.behance.net/project_modules/fs/31ae0f190346029.65b9886928828.png",
       alt: "Image 4",
+    },
+    {
+      src: "https://mir-s3-cdn-cf.behance.net/project_modules/fs/65c6c6133870811.6527c39bd0ec4.png",
+      alt: "Image 5",
     },
   ];
   return (
     <>
-      <style>
-        {`
-          
-
-          .swiper .swiper-button-next,
-          .swiper .swiper-button-prev {
-          display: none !important;
-            color: white !important;
-            height: 30px !important;
-            width: 30px !important;
-            background-color: #FF5252;
-            overflow: hidden;
-            
-            padding: 10px !important;
-            border-radius: 10%;
-            box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1);
-          }
-
-        .swiper:hover .swiper-button-next,
-        .swiper:hover .swiper-button-prev {
-          display: flex !important;
-         
-            }
-
-          .swiper-button-next:after,
-          .swiper-button-prev:after {
-                font-size: 15px !important; /* Add this line to control arrow size */
-            }
-
-          .swiper-pagination-bullet {
-            width: 10px !important;
-            height: 10px !important;
-            background-color: #000 !important;
-            opacity: 0.5 !important;
-          }
-
-          .swiper-pagination-bullet-active {
-            opacity: 1 !important;
-            background-color: #FF5252 !important;
-          }
-        `}
-      </style>
+      <style>.swiper-n</style>
       <Swiper
         spaceBetween={30}
         centeredSlides={true}
@@ -81,20 +45,49 @@ export default function Carousel() {
         pagination={{
           clickable: true,
         }}
-        navigation={true}
+        navigation={{
+          prevEl: navigationPrevRef.current,
+          nextEl: navigationNextRef.current,
+        }}
+        grabCursor={true}
+        onBeforeInit={(swiper) => {
+          swiper.params.navigation.prevEl = navigationPrevRef.current;
+          swiper.params.navigation.nextEl = navigationNextRef.current;
+        }}
         modules={[Autoplay, Pagination, Navigation]}
         className="mySwiper"
       >
-        {images?.map((image) => (
-          <SwiperSlide className="rounded-lg" key={image.alt}>
-            <img
-              className="min-h-[200px] object-cover object-right lg:min-h-[400px]"
-              src={image.src}
-              alt={image.alt}
-            />
+        {images.map((item) => (
+          <SwiperSlide key={item.alt}>
+            <MainBanner src={item.src} />
           </SwiperSlide>
         ))}
       </Swiper>
+      <button
+        ref={navigationPrevRef}
+        className={`absolute left-1 -translate-y-[325px] z-10 bg-[#c2bdbd] shadow-lg rounded-full p-2  disabled:opacity-50 disabled:cursor-not-allowed`}
+      >
+        <ChevronLeft className="w-6 h-6 text-white" />
+      </button>
+
+      <button
+        ref={navigationNextRef}
+        className={`absolute right-1  -translate-y-[325px] z-10 bg-[#c2bdbd] shadow-lg rounded-full p-2  disabled:opacity-50 disabled:cursor-not-allowed`}
+      >
+        <ChevronRight className="w-6 h-6 text-white" />
+      </button>
     </>
+  );
+}
+
+function MainBanner({ src }) {
+  return (
+    <div className="main_carousel_image_banner">
+      <img
+        className=" object-cover object-center lg:w-[1900px] h-[600px] rounded-md"
+        src={src}
+        alt="image"
+      />
+    </div>
   );
 }

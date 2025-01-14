@@ -1,22 +1,14 @@
 import ProductOffer from "../ProductOffer";
 
-function Ads({ ads }) {
+function Ads({ ads, count }) {
   return (
-    <div className="px-5">
-      <div
-        className=" md:w-full flex flex-col lg:flex-row
-     gap-10 items-center p-5"
-      >
-        {ads.map((ad) => (
-          <ProductOffer
-            key={ad.name}
-            src={ad.src}
-            side={ad.side}
-            name={ad.name}
-            price={ad.price}
-          />
-        ))}
-      </div>
+    <div
+      className={`md:w-full px-4 flex flex-col md:grid grid-cols-${count}
+     gap-5`}
+    >
+      {ads.map((ad) => (
+        <ProductOffer key={ad.src} src={ad.src} />
+      ))}
     </div>
   );
 }
